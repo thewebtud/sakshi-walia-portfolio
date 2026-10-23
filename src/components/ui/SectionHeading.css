@@ -1,0 +1,33 @@
+.section-heading {
+  max-width: 46rem;
+  margin-bottom: var(--space-7);
+}
+
+.section-heading__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  color: var(--accent);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-heading__eyebrow::before {
+  content: '';
+  width: 2rem;
+  height: 2px;
+  background: currentcolor;
+}
+
+.section-heading__title {
+  font-size: var(--fs-2xl);
+}
+
+.section-heading__intro {
+  margin-top: var(--space-4);
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+}

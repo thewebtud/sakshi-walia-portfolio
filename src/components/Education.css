@@ -1,0 +1,80 @@
+.edu__list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.edu__item {
+  display: grid;
+  align-items: center;
+  gap: var(--space-4);
+  grid-template-columns: 10rem 1fr;
+}
+
+.edu__dates {
+  color: var(--accent);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.edu__card {
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    translate var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base);
+}
+
+.edu__item:hover .edu__card {
+  translate: 6px 0;
+  box-shadow: var(--shadow-md);
+}
+
+.edu__degree {
+  font-size: 1.25rem;
+}
+
+.edu__school {
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.edu__more-title {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-xl);
+}
+
+.edu__more {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+.edu__more-item {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+}
+
+.edu__more-item h4 {
+  margin-bottom: var(--space-2);
+  font-size: 1.1rem;
+}
+
+.edu__more-item p {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: 40rem) {
+  .edu__item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+}

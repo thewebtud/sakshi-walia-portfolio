@@ -1,0 +1,107 @@
+.impact__grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.impact__item {
+  display: flex;
+}
+
+.impact__tile {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  overflow: hidden;
+  transition:
+    translate var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base),
+    border-color var(--dur-base);
+}
+
+.impact__tile::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0.25);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.impact__tile:hover,
+.impact__tile:focus-visible {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  translate: 0 -6px;
+}
+
+.impact__tile:hover::before,
+.impact__tile:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.impact__value {
+  display: block;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.2rem + 1.7vw, 3.2rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.impact__label {
+  margin-top: var(--space-2);
+  font-size: var(--fs-base);
+  font-weight: 700;
+}
+
+.impact__detail {
+  flex: 1;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.impact__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  color: var(--accent);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.impact__link svg {
+  width: 1.1em;
+  height: 1.1em;
+  transition: translate var(--dur-base) var(--ease-out);
+}
+
+.impact__tile:hover .impact__link svg {
+  translate: 4px 0;
+}
+
+@media (max-width: 72rem) {
+  .impact__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 36rem) {
+  .impact__grid {
+    grid-template-columns: 1fr;
+  }
+}

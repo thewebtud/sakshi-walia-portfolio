@@ -1,0 +1,6 @@
+export { profile } from './profile.js'
+export { metrics } from './metrics.js'
+export { experience, themes, awardBodies, caseStudies } from './experience.js'
+export { skills, skillCategories } from './skills.js'
+export { education, additional } from './education.js'
+export { links } from './links.js'

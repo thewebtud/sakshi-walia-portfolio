@@ -1,0 +1,111 @@
+.skills__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.skills__groups {
+  display: grid;
+  gap: var(--space-6) var(--space-7);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+
+.skills__group-title {
+  margin-bottom: var(--space-3);
+  color: var(--text-muted);
+  font-family: var(--font-text);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skills__chip {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.skills__chip--linked {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+.skills__count {
+  display: inline-grid;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.skills__chip--linked[aria-expanded='true'] .skills__count {
+  background: var(--on-accent);
+  color: var(--accent);
+}
+
+.skills__related {
+  margin-top: var(--space-5);
+}
+
+.skills__related-card {
+  overflow: hidden;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.skills__related-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+  padding: var(--space-4) var(--space-5);
+}
+
+.skills__related-inner ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skills__related-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.4rem 1rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.skills__related-link:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.skills__related-link svg {
+  width: 1.1em;
+  height: 1.1em;
+}

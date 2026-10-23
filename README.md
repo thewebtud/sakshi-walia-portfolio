@@ -1,16 +1,44 @@
-# React + Vite
+# Sakshi Walia: Marketing Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page, animated portfolio for Sakshi Walia (Strategy & Insights). Built with React 19, Vite and [Motion](https://motion.dev). All content comes from her resume (`src/assets/Sakshi_Walia.pdf`).
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | ESLint |
+| `npm run check:content` | Validate the content data (unique ids, skill references, every resume skill present once) |
+| `npm run images` | Regenerate responsive photo variants and the social image |
 
-## React Compiler
+## Editing content
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All copy lives in [`src/data/`](src/data); components contain no resume facts.
 
-## Expanding the ESLint configuration
+- `profile.js`: name, positioning, contact details, summary
+- `metrics.js`: headline impact numbers (each links to a case study)
+- `experience.js`: role, themes and the Dell case studies (Challenge / Approach / Outcome)
+- `skills.js`, `education.js`: skills by category, education, additional information
+- `links.js`: set `linkedin` to her profile URL to show the LinkedIn link (hidden while `null`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Only use facts that appear in the resume. Run `npm run check:content` after editing.
+
+## Photo and resume
+
+- Photo: replace `src/assets/sakshi-walia-avatar.png`, then run `npm run images`. This writes variants to `src/assets/generated/` and `public/og-image.jpg`.
+- Resume: `src/assets/Sakshi_Walia.pdf` is the source; the site serves the copy in `public/Sakshi_Walia.pdf`. After updating the source, copy it over:
+
+  ```sh
+  cp src/assets/Sakshi_Walia.pdf public/Sakshi_Walia.pdf
+  ```
+
+## Accessibility and motion
+
+The site targets WCAG 2.1 AA. Animations respect `prefers-reduced-motion`, and the colour theme follows the system light/dark setting.
+
+## Deployment
+
+`npm run build` produces a static site in `dist/` that can be hosted on any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages). Before launch, set absolute URLs for the Open Graph and Twitter images in `index.html` once the production domain is known.
+

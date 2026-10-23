@@ -2,33 +2,52 @@ schema: spec-driven
 githubCopilot:
   cloudAgent: true
 
-# Project context (optional)
-# Add only constraints that should guide OpenSpec artifacts and workflows.
-# Include constraints an agent cannot infer by reading the code.
-# Keep general project documentation and discoverable codebase facts out.
-# Example:
-#   context: |
-#     Designs and tasks must cover Windows, macOS, and Linux
-#     Write all artifacts in Spanish
+# Project context
+context: |
+  This project is the personal marketing portfolio website for Sakshi Walia,
+  a marketing professional. It is a showcase for recruiters, hiring managers,
+  and prospective clients, so the primary goal is to present her experience,
+  campaigns, skills, and results clearly and persuasively.
+  Her resume lives at src/assets/Sakshi_Walia.pdf and is the source of truth
+  for career facts. Never invent employers, titles, dates, metrics, or
+  testimonials; mark any unverified content as a clearly labelled placeholder.
+  Product constraints:
+    - Single-page, static front end with no backend unless a change explicitly adds one
+    - Mobile-first and responsive; must look polished on phones, tablets, and desktops
+    - Accessible (WCAG 2.1 AA): semantic HTML, keyboard navigation, sufficient contrast,
+      alt text, and respect for prefers-reduced-motion
+    - Fast to load: optimise images, avoid heavy dependencies, target Lighthouse 90+
+    - Good SEO and social sharing (title, meta description, Open Graph tags)
+    - Tone is professional, confident, and results-oriented; copy is in English
+    - Include a clear call to action (contact / download resume) on every main view
+    - Personal data (email, phone) should only be exposed intentionally and
+      never committed as secrets
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always state what is out of scope
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+# Per-artifact rules
+rules:
+  proposal:
+    - Keep proposals concise and state what is out of scope
+    - Describe the visitor-facing benefit (who sees it and why it matters)
+    - Flag any content that depends on information from Sakshi
+  specs:
+    - Write requirements from the visitor's perspective with testable scenarios
+    - Include accessibility and responsive behaviour for any UI requirement
+  design:
+    - Prefer the simplest approach using the existing React and Vite setup
+    - Justify any new dependency
+    - Note performance and accessibility impact of design choices
+  tasks:
+    - Break tasks into small, independently verifiable chunks
+    - Include a task to verify the build and lint pass (npm run build, npm run lint)
+    - Include a responsive and accessibility check for UI work
 
-# Per-operation guidance (optional)
-# Add advisory guidance for how apply and archive work should be conducted.
-# This is separate from artifact rules above.
-# Example:
-#   operations:
-#     apply:
-#       guidance:
-#         - Keep test summaries concise
-#     archive:
-#       guidance:
-#         - Summarize the archive outcome before finishing
+# Per-operation guidance
+operations:
+  apply:
+    guidance:
+      - Implement only what the change's tasks and specs call for
+      - Run npm run lint and npm run build before marking work complete
+      - Use placeholder content, clearly marked, when real content is unavailable
+  archive:
+    guidance:
+      - Summarize the archive outcome before finishing
