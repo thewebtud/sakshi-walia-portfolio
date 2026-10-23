@@ -8,7 +8,7 @@ export const profile = {
   email: 'sakshiwaliaa10@gmail.com',
   phone: '+91 8446779559',
   phoneHref: '+918446779559',
-  resumeUrl: '/Sakshi_Walia.pdf',
+  resumeUrl: `${import.meta.env.BASE_URL}Sakshi_Walia.pdf`,
   resumeFileName: 'Sakshi_Walia_Resume.pdf',
   summary:
     'Strategy & insights professional with two years of experience using market research, consumer insights and data analytics to solve business problems and identify growth opportunities. I translate complex data into actionable recommendations, collaborate with cross-functional teams, and focus on measurable business impact.',
