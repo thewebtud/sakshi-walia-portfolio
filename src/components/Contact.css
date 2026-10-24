@@ -3,6 +3,7 @@
   padding: clamp(2rem, 1rem + 5vw, 5rem);
   border-radius: var(--radius-lg);
   background: #14161a;
+  border: 1px solid var(--border);
   color: #f5f2ee;
   overflow: hidden;
 }

@@ -8,6 +8,12 @@ import './styles/base.css'
 import './styles/buttons.css'
 import App from './App.jsx'
 
+try {
+  localStorage.removeItem('theme')
+} catch {
+  // Storage blocked: nothing to clean up.
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />

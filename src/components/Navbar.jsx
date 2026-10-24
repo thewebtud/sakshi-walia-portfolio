@@ -3,8 +3,7 @@ import { useMotionValueEvent, useScroll } from 'motion/react'
 import { profile } from '../data/index.js'
 import { sections, spyIds } from '../data/sections.js'
 import { useScrollSpy } from '../hooks/useScrollSpy.js'
-import { useTheme } from '../hooks/useTheme.js'
-import { CloseIcon, DownloadIcon, MenuIcon, MoonIcon, SunIcon } from './ui/Icons.jsx'
+import { CloseIcon, DownloadIcon, MenuIcon } from './ui/Icons.jsx'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -12,7 +11,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const toggleRef = useRef(null)
-  const { theme, toggleTheme } = useTheme()
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', (y) => setScrolled(y > 24))
@@ -66,14 +64,6 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar__actions">
-          <button
-            type="button"
-            className="navbar__icon-btn"
-            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-            onClick={toggleTheme}
-          >
-            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-          </button>
           <button
             ref={toggleRef}
             type="button"
