@@ -1,4 +1,4 @@
 export const links = {
-  // Set to her LinkedIn profile URL once supplied; the link is hidden while null.
-  linkedin: null,
+  // Absolute https URL to her LinkedIn profile; set to null to hide the link.
+  linkedin: 'https://www.linkedin.com/in/sakshi-walia-business-strategy',
 }

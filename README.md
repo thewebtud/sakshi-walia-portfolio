@@ -21,7 +21,7 @@ All copy lives in [`src/data/`](src/data); components contain no resume facts.
 - `metrics.js`: headline impact numbers (each links to a case study)
 - `experience.js`: role, themes and the Dell case studies (Challenge / Approach / Outcome)
 - `skills.js`, `education.js`: skills by category, education, additional information
-- `links.js`: set `linkedin` to her profile URL to show the LinkedIn link (hidden while `null`)
+- `links.js`: `linkedin` holds her profile URL (absolute `https`) and drives the Contact section's LinkedIn link; set it to `null` to hide the link
 
 Only use facts that appear in the resume. Run `npm run check:content` after editing.
 

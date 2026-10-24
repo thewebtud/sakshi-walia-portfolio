@@ -163,7 +163,7 @@ export default function Hero() {
           </div>
           <div className="hero__chip hero__chip--two" aria-hidden="true">
             <strong>20+</strong>
-            <span>award wins</span>
+            <span>award wins for Dell</span>
           </div>
         </m.div>
       </div>

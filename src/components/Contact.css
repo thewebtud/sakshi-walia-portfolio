@@ -123,6 +123,14 @@
   color: #ff9cc5;
 }
 
+.contact__divider {
+  align-self: center;
+  width: 1px;
+  height: 1.5rem;
+  margin-inline: var(--space-2);
+  background: #3a404c;
+}
+
 .contact__copy {
   display: inline-flex;
   min-height: 2.75rem;

@@ -54,19 +54,20 @@ export default function Contact() {
             <li>
               <PhoneIcon />
               <a href={`tel:${profile.phoneHref}`}>{profile.phone}</a>
+
+              {/* Vertical divider and some space between phone and LinkedIn */}
+              <span className="contact__divider" aria-hidden="true"></span>
+
+              <LinkedInIcon />
+                <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a>
             </li>
             <li>
               <MapPinIcon />
               <span>{profile.location}</span>
             </li>
-            {links.linkedin && (
-              <li>
-                <LinkedInIcon />
-                <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
-                  LinkedIn profile
-                </a>
-              </li>
-            )}
+           
           </ul>
         </Reveal>
       </div>
