@@ -31,9 +31,25 @@ export default function Navbar() {
     <header className="navbar" data-scrolled={scrolled}>
       <div className="navbar__inner container">
         <a className="navbar__brand" href="#home">
-          <span className="navbar__mark" aria-hidden="true">
-            SW
-          </span>
+          <svg className="navbar__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <rect width="64" height="64" rx="16" fill="#14161a" />
+            <path
+              d="M26 21l6 22 7-16 7 16 6-22"
+              fill="none"
+              stroke="#faf7f4"
+              strokeWidth="5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M28 18c-3-3-14-4-14 4 0 9 15 5 15 14 0 8-11 8-16 3"
+              fill="none"
+              stroke="#ff7ab0"
+              strokeWidth="5.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
           <span className="navbar__name">{profile.name}</span>
         </a>
 

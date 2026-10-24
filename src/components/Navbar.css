@@ -36,15 +36,11 @@
 }
 
 .navbar__mark {
-  display: grid;
+  display: block;
   width: 2.75rem;
   height: 2.75rem;
-  place-items: center;
   border-radius: 0.75rem;
-  background: var(--accent);
-  color: var(--on-accent);
-  font-size: 0.95rem;
-  font-weight: 700;
+  box-shadow: 0 0 0 1px var(--border);
   transition: transform var(--dur-base) var(--ease-out);
 }
 
