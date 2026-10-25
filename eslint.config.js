@@ -12,7 +12,12 @@ export default defineConfig([
     languageOptions: { globals: globals.node },
   },
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['*.config.js'],
+    extends: [js.configs.recommended],
+    languageOptions: { globals: globals.node },
+  },
+  {
+    files: ['src/**/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
       reactHooks.configs.flat.recommended,
