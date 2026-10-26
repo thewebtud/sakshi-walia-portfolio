@@ -1,3 +1,7 @@
+.experience {
+  --section-bg: var(--tint-experience);
+}
+
 .timeline {
   position: relative;
   padding-left: 2.75rem;
@@ -15,7 +19,7 @@
 .timeline__line {
   display: block;
   height: 100%;
-  background: linear-gradient(var(--accent), var(--accent-2));
+  background: linear-gradient(#b79bff, #ff9ec7, #ffb88c);
   transform-origin: top;
 }
 
@@ -31,20 +35,26 @@
   height: 1.15rem;
   border: 4px solid var(--accent);
   border-radius: 50%;
-  background: var(--bg);
-  box-shadow: 0 0 0 6px var(--accent-soft);
+  background: var(--surface);
+  box-shadow: 0 0 0 6px var(--pastel-lilac);
 }
 
 .timeline__card {
   padding: var(--space-6);
-  border: 1px solid var(--border);
+  border: 2px solid var(--pastel-lilac);
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow-sm);
+  rotate: var(--tilt-c);
+  transition: rotate var(--dur-bounce) var(--ease-bounce);
+}
+
+.timeline__card:hover {
+  rotate: 0deg;
 }
 
 .timeline__dates {
-  color: var(--accent);
+  color: var(--accent-strong);
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -81,6 +91,7 @@
   width: 0.7rem;
   height: 2px;
   background: var(--accent);
+  border-radius: 1px;
 }
 
 .cases__head {
@@ -120,24 +131,39 @@
   align-items: flex-start;
   gap: var(--space-3);
   padding: var(--space-5);
-  border: 1px solid var(--border);
+  border: 2px solid var(--pastel-peach);
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow-sm);
   text-align: left;
+  rotate: var(--tilt-a);
   transition:
+    rotate var(--dur-bounce) var(--ease-bounce),
+    scale var(--dur-bounce) var(--ease-bounce),
     border-color var(--dur-base),
     box-shadow var(--dur-base);
+}
+
+.case-card:nth-child(3n + 2) .case-card__button {
+  border-color: var(--pastel-sky);
+  rotate: var(--tilt-b);
+}
+
+.case-card:nth-child(3n) .case-card__button {
+  border-color: var(--pastel-mint);
+  rotate: var(--tilt-c);
 }
 
 .case-card__button:hover,
 .case-card__button:focus-visible {
   border-color: var(--accent);
   box-shadow: var(--shadow-md);
+  rotate: 0deg;
+  scale: 1.02;
 }
 
 .case-card__theme {
-  color: var(--accent);
+  color: var(--accent-strong);
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -160,7 +186,7 @@
 .case-card__metric {
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-pill);
-  background: var(--accent-soft);
+  background: var(--pastel-butter);
   color: var(--text);
   font-size: var(--fs-xs);
   font-weight: 600;
@@ -179,9 +205,9 @@
 
 .case-card__tags span {
   padding: 0.2rem 0.65rem;
-  border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  color: var(--text-muted);
+  background: var(--pastel-lilac);
+  color: var(--text);
   font-size: var(--fs-xs);
   font-weight: 600;
 }
@@ -190,7 +216,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  color: var(--accent);
+  color: var(--accent-strong);
   font-size: var(--fs-sm);
   font-weight: 700;
 }
@@ -214,8 +240,9 @@
   margin-top: var(--space-7);
   padding: var(--space-6);
   border-radius: var(--radius-lg);
-  background: var(--accent);
-  color: var(--on-accent);
+  background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-peach));
+  color: var(--text);
+  box-shadow: var(--shadow-sticker);
 }
 
 .awards__title {
@@ -235,10 +262,23 @@
 
 .awards__list li {
   padding: 0.4rem 1rem;
-  border: 1px solid currentcolor;
   border-radius: var(--radius-pill);
+  background: var(--surface);
   font-size: var(--fs-sm);
   font-weight: 700;
+  rotate: -1.5deg;
+}
+
+.awards__list li:nth-child(2n) {
+  rotate: 1.5deg;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline__card,
+  .case-card__button {
+    rotate: 0deg !important;
+    scale: 1 !important;
+  }
 }
 
 @media (max-width: 40rem) {

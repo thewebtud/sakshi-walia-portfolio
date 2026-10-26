@@ -109,12 +109,28 @@ button {
 }
 
 .section {
+  --section-bg: var(--bg);
+
   position: relative;
   padding-block: clamp(4.5rem, 3rem + 7vw, 8rem);
+  background: var(--section-bg);
+}
+
+/* Soft wavy edge in this section's tint, overlapping the section above */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  height: 1.75rem;
+  background: var(--section-bg);
+  pointer-events: none;
+  transform: translateY(calc(-100% + 1px));
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 28' preserveAspectRatio='none'%3E%3Cpath d='M0 28V14C20 2 40 2 60 14s40 12 60 0v14z'/%3E%3C/svg%3E") center bottom / 60rem 100% repeat-x;
 }
 
 .section--alt {
-  background: var(--bg-alt);
+  --section-bg: var(--bg-alt);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -128,5 +144,16 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .case-card__button,
+  .timeline__card,
+  .hero__tags li,
+  .about__tags li,
+  .hero__chip,
+  .hero__frame,
+  .hero__photo,
+  .awards__list li {
+    rotate: 0deg !important;
   }
 }

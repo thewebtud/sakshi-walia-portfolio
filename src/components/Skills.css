@@ -1,3 +1,7 @@
+.skills {
+  --section-bg: var(--tint-skills);
+}
+
 .skills__filters {
   display: flex;
   flex-wrap: wrap;
@@ -33,15 +37,34 @@
   align-items: center;
   gap: var(--space-2);
   padding: 0.45rem 1.1rem;
-  border: 1px solid var(--border);
+  border: 2px solid transparent;
   border-radius: var(--radius-pill);
-  background: var(--surface);
+  background: var(--pastel-mint);
+  color: var(--text);
   font-size: var(--fs-sm);
   font-weight: 600;
 }
 
+.skills__list li:nth-child(4n + 2) > .skills__chip {
+  background: var(--pastel-peach);
+}
+
+.skills__list li:nth-child(4n + 3) > .skills__chip {
+  background: var(--pastel-sky);
+}
+
+.skills__list li:nth-child(4n) > .skills__chip {
+  background: var(--pastel-butter);
+}
+
 .skills__chip--linked {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-color: var(--border-strong);
+}
+
+.skills__list li > .skills__chip--linked[aria-expanded='true'] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .skills__count {
@@ -50,7 +73,7 @@
   height: 1.4rem;
   place-items: center;
   border-radius: 50%;
-  background: var(--accent-soft);
+  background: var(--surface);
   color: var(--accent-strong);
   font-size: 0.72rem;
   font-weight: 700;
@@ -67,7 +90,7 @@
 
 .skills__related-card {
   overflow: hidden;
-  border: 1px solid var(--accent);
+  border: 2px solid var(--accent);
   border-radius: var(--radius-md);
   background: var(--surface);
 }
@@ -94,8 +117,8 @@
   padding: 0.4rem 1rem;
   border: 0;
   border-radius: var(--radius-pill);
-  background: var(--accent-soft);
-  color: var(--accent-strong);
+  background: var(--pastel-lilac);
+  color: var(--text);
   font-size: var(--fs-sm);
   font-weight: 700;
 }

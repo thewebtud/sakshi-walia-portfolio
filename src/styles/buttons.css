@@ -12,40 +12,40 @@
   line-height: 1;
   text-decoration: none;
   transition:
-    transform var(--dur-fast) var(--ease-out),
+    transform var(--dur-bounce) var(--ease-bounce),
     background-color var(--dur-fast),
     border-color var(--dur-fast),
     box-shadow var(--dur-base);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) rotate(-1deg) scale(1.03);
 }
 
 .btn:active {
-  transform: translateY(0) scale(0.97);
+  transform: translateY(0) scale(0.95);
 }
 
 .btn--primary {
   background: var(--accent);
   color: var(--on-accent);
-  box-shadow: 0 6px 20px -6px var(--accent);
+  box-shadow: 0 6px 0 -3px var(--pastel-lilac), var(--shadow-sticker);
 }
 
 .btn--primary:hover {
   background: var(--accent-strong);
-  box-shadow: 0 10px 26px -6px var(--accent);
 }
 
 .btn--ghost {
-  border-color: var(--border);
+  border-color: var(--border-strong);
   background: var(--surface);
   color: var(--text);
 }
 
 .btn--ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-strong);
+  background: var(--pastel-butter);
+  color: var(--text);
 }
 
 .btn--small {
@@ -62,25 +62,26 @@
 .chip-button {
   min-height: 2.75rem;
   padding: 0.45rem 1.1rem;
-  border: 1px solid var(--border);
+  border: 2px solid transparent;
   border-radius: var(--radius-pill);
-  background: var(--surface);
+  background: var(--pastel-lilac);
+  color: var(--text);
   font-size: var(--fs-sm);
   font-weight: 600;
   transition:
     background-color var(--dur-fast),
     border-color var(--dur-fast),
     color var(--dur-fast),
-    transform var(--dur-fast) var(--ease-out);
+    transform var(--dur-bounce) var(--ease-bounce);
 }
 
 .chip-button:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+  border-color: var(--accent-strong);
+  transform: translateY(-3px) rotate(-1.5deg);
 }
 
 .chip-button:active {
-  transform: scale(0.96);
+  transform: scale(0.94);
 }
 
 .chip-button[aria-pressed='true'],
@@ -88,4 +89,13 @@
   border-color: var(--accent);
   background: var(--accent);
   color: var(--on-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover,
+  .btn:active,
+  .chip-button:hover,
+  .chip-button:active {
+    transform: none;
+  }
 }

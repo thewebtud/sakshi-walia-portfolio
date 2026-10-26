@@ -1,3 +1,7 @@
+.impact {
+  --section-bg: var(--tint-impact);
+}
+
 .impact__grid {
   display: grid;
   gap: var(--space-4);
@@ -15,14 +19,16 @@
   flex-direction: column;
   gap: var(--space-2);
   padding: var(--space-5);
-  border: 1px solid var(--border);
+  border: 2px solid var(--pastel-lilac);
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow-sm);
   text-align: left;
   overflow: hidden;
+  rotate: var(--tilt-a);
   transition:
-    translate var(--dur-base) var(--ease-out),
+    translate var(--dur-bounce) var(--ease-bounce),
+    rotate var(--dur-bounce) var(--ease-bounce),
     box-shadow var(--dur-base),
     border-color var(--dur-base);
 }
@@ -43,6 +49,7 @@
   border-color: var(--accent);
   box-shadow: var(--shadow-md);
   translate: 0 -6px;
+  rotate: 0deg;
 }
 
 .impact__tile:hover::before,
@@ -52,7 +59,7 @@
 
 .impact__value {
   display: block;
-  color: var(--accent);
+  color: var(--accent-strong);
   font-family: var(--font-display);
   font-size: clamp(2rem, 1.2rem + 1.7vw, 3.2rem);
   font-variant-numeric: tabular-nums;
@@ -79,7 +86,7 @@
   align-items: center;
   gap: var(--space-2);
   margin-top: var(--space-3);
-  color: var(--accent);
+  color: var(--accent-strong);
   font-size: var(--fs-sm);
   font-weight: 700;
 }
@@ -92,6 +99,12 @@
 
 .impact__tile:hover .impact__link svg {
   translate: 4px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .impact__tile {
+    rotate: 0deg;
+  }
 }
 
 @media (max-width: 72rem) {

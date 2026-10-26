@@ -90,13 +90,6 @@ The production build SHALL load quickly on a mid-range mobile device over a typi
 - **WHEN** images and fonts finish loading
 - **THEN** surrounding content does not move
 
-### Requirement: System colour-scheme preference
-The site SHALL adopt a colour theme that matches the visitor's system light/dark preference while keeping all text and controls at AA contrast in both themes.
-
-#### Scenario: Dark system preference
-- **WHEN** the visitor's system preference is dark
-- **THEN** the site renders its dark theme on first paint without a flash of the light theme
-
 ### Requirement: Graceful behaviour without scripting errors
 The site SHALL show a meaningful fallback if a section fails to render, and the base HTML MUST include a `noscript` message with the resume download link and contact email.
 

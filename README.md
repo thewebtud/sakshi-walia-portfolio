@@ -36,7 +36,7 @@ Only use facts that appear in the resume. Run `npm run check:content` after edit
 
 ## Accessibility and motion
 
-The site targets WCAG 2.1 AA. Animations respect `prefers-reduced-motion`, and the site uses a dark colour theme only.
+The site targets WCAG 2.1 AA. Animations respect `prefers-reduced-motion`, and the site uses a single light pastel colour theme (no dark mode or theme toggle).
 
 ## Deployment
 

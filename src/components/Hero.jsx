@@ -86,7 +86,9 @@ export default function Hero() {
       <div className="hero__bg" aria-hidden="true">
         <m.span className="hero__blob hero__blob--one" style={reduce ? undefined : { y: blobY1 }} />
         <m.span className="hero__blob hero__blob--two" style={reduce ? undefined : { y: blobY2 }} />
-        <span className="hero__grid" />
+        <span className="hero__shape hero__shape--ring" />
+        <span className="hero__shape hero__shape--star" />
+        <span className="hero__shape hero__shape--dot" />
       </div>
 
       <div className="hero__inner container">
