@@ -7,10 +7,12 @@ export default function About() {
   return (
     <section id="about" className="section about" aria-labelledby="about-title">
       <div className="container">
-        <SectionHeading id="about-title" eyebrow="About" title="Data, turned into decisions." />
+        <SectionHeading id="about-title" eyebrow="A little about me" title="" />
         <div className="about__grid">
           <Reveal className="about__summary">
-            <p>{profile.summary}</p>
+            {profile.summary.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
             <ul className="about__tags" aria-label="Areas of focus">
               {profile.positioning.map((item) => (
                 <li key={item}>{item}</li>

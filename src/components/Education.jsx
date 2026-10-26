@@ -10,7 +10,7 @@ export default function Education() {
         <SectionHeading
           id="education-title"
           eyebrow="Education"
-          title="Built on marketing, analytics and curiosity."
+          title=""
         />
 
         <ol className="edu__list">
@@ -29,7 +29,7 @@ export default function Education() {
           ))}
         </ol>
 
-        <h3 className="edu__more-title">Beyond the day job</h3>
+        {/* <h3 className="edu__more-title">Beyond the day job</h3>
         <ul className="edu__more">
           {additional.map((item, index) => (
             <Reveal as="li" key={item.id} delay={0.08 * index} className="edu__more-item">
@@ -37,7 +37,7 @@ export default function Education() {
               <p>{item.description}</p>
             </Reveal>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </section>
   )

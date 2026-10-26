@@ -10,6 +10,10 @@
   line-height: 1.75;
 }
 
+.about__summary p + p {
+  margin-top: var(--space-4);
+}
+
 .about__tags {
   display: flex;
   flex-wrap: wrap;

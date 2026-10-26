@@ -29,8 +29,8 @@ export default function Experience() {
         <SectionHeading
           id="experience-title"
           eyebrow="Experience & case studies"
-          title="Strategy that shows up in the numbers."
-          intro="Two years of turning research, analytics and storytelling into growth for one of the world’s best-known technology brands."
+          title=""
+          intro=""
         />
 
         <div ref={timelineRef} className="timeline">
@@ -84,7 +84,7 @@ export default function Experience() {
           </AnimatePresence>
         </ul>
 
-        <Reveal className="awards">
+        {/* <Reveal className="awards">
           <div>
             <h3 className="awards__title">Recognition</h3>
             <p>
@@ -97,7 +97,7 @@ export default function Experience() {
             ))}
             <li>and more</li>
           </ul>
-        </Reveal>
+        </Reveal> */}
       </div>
     </section>
   )

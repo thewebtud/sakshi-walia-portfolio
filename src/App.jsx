@@ -39,9 +39,9 @@ export default function App() {
             <SectionBoundary name="About">
               <About />
             </SectionBoundary>
-            <SectionBoundary name="Impact">
+            {/* <SectionBoundary name="Impact">
               <Impact />
-            </SectionBoundary>
+            </SectionBoundary> */}
             <SectionBoundary name="Experience">
               <Experience />
             </SectionBoundary>

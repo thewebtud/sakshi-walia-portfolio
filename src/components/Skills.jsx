@@ -41,8 +41,8 @@ export default function Skills() {
         <SectionHeading
           id="skills-title"
           eyebrow="Skills & tools"
-          title="A toolkit for insight-led strategy."
-          intro="From market sizing to marketing mix modelling. Skills linked to a case study open the work where I used them."
+          title=""
+          intro=""
         />
 
         <Reveal className="skills__filters" role="group" aria-label="Filter skills by category">
