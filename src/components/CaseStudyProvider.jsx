@@ -9,6 +9,19 @@ const studyById = new Map(caseStudies.map((study) => [study.id, study]))
 const themeById = new Map(themes.map((theme) => [theme.id, theme.label]))
 const skillById = new Map(skills.map((skill) => [skill.id, skill.label]))
 
+// Renders **bold** as <strong> and *italic* as <em>; everything else stays plain text.
+function renderInline(text) {
+  return text.split(/(\*\*.+?\*\*|\*.+?\*)/g).map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>
+    }
+    if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+      return <em key={index}>{part.slice(1, -1)}</em>
+    }
+    return part
+  })
+}
+
 export default function CaseStudyProvider({ children }) {
   const [state, setState] = useState({ openId: null, order: allIds })
   const dialogRef = useRef(null)
@@ -85,19 +98,19 @@ export default function CaseStudyProvider({ children }) {
 
               <section>
                 <h4>Challenge</h4>
-                <p>{study.challenge}</p>
+                <p>{renderInline(study.challenge)}</p>
               </section>
               <section>
                 <h4>Approach</h4>
                 <ul>
                   {study.approach.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>{renderInline(item)}</li>
                   ))}
                 </ul>
               </section>
               <section>
                 <h4>Outcome</h4>
-                <p>{study.outcome}</p>
+                <p>{renderInline(study.outcome)}</p>
               </section>
 
               {study.skills.length > 0 && (
@@ -106,6 +119,21 @@ export default function CaseStudyProvider({ children }) {
                     <li key={id}>{skillById.get(id)}</li>
                   ))}
                 </ul>
+              )}
+
+              {study.links?.length > 0 && (
+                <section>
+                  <h4>Links</h4>
+                  <ul>
+                    {study.links.map((link) => (
+                      <li key={link.url}>
+                        <a href={link.url} target="_blank" rel="noopener noreferrer">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
               )}
             </div>
 

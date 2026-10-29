@@ -154,6 +154,13 @@ html[data-scroll-locked] {
   font-weight: 600;
 }
 
+.case-dialog__body a {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .case-dialog__footer {
   display: flex;
   align-items: center;

@@ -20,6 +20,9 @@ export const skills = [
   { id: 'competitive-intelligence', label: 'Competitive Intelligence', category: 'insights' },
 
   { id: 'marketing-analytics', label: 'Marketing Analytics', category: 'analytics' },
+  { id: 'attribution-modelling', label: 'Attribution Modelling', category: 'analytics' },
+  { id: 'audience-targeting', label: 'Audience Targeting', category: 'analytics' },
+  { id: 'regional-marketing', label: 'Regional Marketing', category: 'analytics' },
   { id: 'power-bi', label: 'Power BI', category: 'analytics' },
   { id: 'sql', label: 'SQL', category: 'analytics' },
   { id: 'r', label: 'R', category: 'analytics' },
