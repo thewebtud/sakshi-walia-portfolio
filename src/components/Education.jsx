@@ -1,4 +1,5 @@
-import { additional, education } from '../data/index.js'
+import { education } from '../data/index.js'
+// import { additional } from '../data/index.js'
 import Reveal from './ui/Reveal.jsx'
 import SectionHeading from './ui/SectionHeading.jsx'
 import './Education.css'
